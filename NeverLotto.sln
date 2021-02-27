@@ -1,33 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeverLotto", "NeverLotto\NeverLotto.csproj", "{97E4AE94-DF41-41CC-A268-01EA9445BCC6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeverLotto.Engine", "NeverLotto.Engine\NeverLotto.Engine.csproj", "{818A0197-3018-479C-BA54-D5D244A44C1F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeverLotto.TestConsole", "NeverLotto.TestConsole\NeverLotto.TestConsole.csproj", "{BBD2D9D8-D27F-4545-908F-542AC7F089AD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{5A81F422-4AE6-42E0-A4D2-C77230423ED6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documents", "documents", "{E7E68473-4598-410E-9D0E-4216B4574616}"
 	ProjectSection(SolutionItems) = preProject
-		EPPlus.dll = EPPlus.dll
+		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{F58B0721-EBB1-421D-8643-5C2688D53787}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeverLotto.UnitTest", "NeverLotto.UnitTest\NeverLotto.UnitTest.csproj", "{5EBBBF47-3C79-498E-B3F6-62E3DC37ED3A}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs15
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = NeverLotto.Engine\\NeverLotto.Engine.csproj
-		SccProjectName1 = NeverLotto.Engine
-		SccLocalPath1 = NeverLotto.Engine
-		SccProjectUniqueName2 = NeverLotto.TestConsole\\NeverLotto.TestConsole.csproj
-		SccProjectName2 = NeverLotto.TestConsole
-		SccLocalPath2 = NeverLotto.TestConsole
-		SccProjectUniqueName3 = NeverLotto\\NeverLotto.csproj
-		SccProjectName3 = NeverLotto
-		SccLocalPath3 = NeverLotto
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -45,8 +36,18 @@ Global
 		{BBD2D9D8-D27F-4545-908F-542AC7F089AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBD2D9D8-D27F-4545-908F-542AC7F089AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBD2D9D8-D27F-4545-908F-542AC7F089AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EBBBF47-3C79-498E-B3F6-62E3DC37ED3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EBBBF47-3C79-498E-B3F6-62E3DC37ED3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EBBBF47-3C79-498E-B3F6-62E3DC37ED3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EBBBF47-3C79-498E-B3F6-62E3DC37ED3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F58B0721-EBB1-421D-8643-5C2688D53787} = {E7E68473-4598-410E-9D0E-4216B4574616}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {727566B6-1C5B-4AB9-ACA4-06385B5ECFDA}
 	EndGlobalSection
 EndGlobal

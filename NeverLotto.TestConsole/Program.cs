@@ -12,25 +12,9 @@ namespace NeverLotto.TestConsole
     {
         private static void Main(string[] args)
         {
-            const int count = 1;
-            const int size = 1;
+            var results = ResultDownloader.Instance.Download();
 
-            for (int i = 0; i <= count / size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    int value = (i * size + j);
-
-                    if (value == count)
-                        break;
-
-                    Console.WriteLine(value);
-                }
-            }
-            return;
-
-
-            var results = AnalyzerHelper.Instance.Generate(new List<ResultCriteria>(), 10000, 100000000, new List<int>(), new List<int>(), new List<int>(), null, OnAdded);
+            // Console.WriteLine(results.Count);
         }
 
         private static void OnAdded(decimal percent, List<Result> results)

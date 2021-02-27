@@ -113,28 +113,13 @@ namespace NeverLotto.Engine
 
         public int SeriesCount { get; set; }
 
-        public string NumbersText
-        {
-            get { return string.Join(" ", Numbers); }
-        }
+        public string NumbersText => string.Join(" ", Numbers);
 
-        public string GeneratedNumbersText
-        {
-            get
-            {
-                return string.Format("{0} ({1})", NumbersText, BonusNumber);
-            }
-        }
+        public string GeneratedNumbersText => string.Format("{0} ({1})", NumbersText, BonusNumber);
 
-        public string LowHighRateText
-        {
-            get { return TextConverter.Instance[LowHighRate]; }
-        }
+        public string LowHighRateText => TextConverter.Instance[LowHighRate];
 
-        public string OddEvenRateText
-        {
-            get { return TextConverter.Instance[OddEvenRate]; }
-        }
+        public string OddEvenRateText => TextConverter.Instance[OddEvenRate];
 
         public int GetBarValue(AnalysisType analysisType)
         {
@@ -218,11 +203,11 @@ namespace NeverLotto.Engine
             }
         }
 
-        public int Number1 { get { return Numbers[0]; } }
-        public int Number2 { get { return Numbers[1]; } }
-        public int Number3 { get { return Numbers[2]; } }
-        public int Number4 { get { return Numbers[3]; } }
-        public int Number5 { get { return Numbers[4]; } }
-        public int Number6 { get { return Numbers[5]; } }
+        public int Number1 => Numbers[0];
+        public int Number2 => Numbers[1];
+        public int Number3 => Numbers[2];
+        public int Number4 => Numbers[3];
+        public int Number5 => Numbers[4];
+        public int Number6 => Numbers[5];
     }
 }

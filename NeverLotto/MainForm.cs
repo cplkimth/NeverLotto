@@ -36,8 +36,7 @@ namespace NeverLotto
             if (DesignMode)
                 return;
 
-            var lines = LocalStorage.ReadAllLines("lotto.txt");
-            _results = ResultParser.Instance.Parse(lines);
+            _results = ResultDownloader.Instance.Download();
 
             _countItems = Utility.CountNumbers(_results);
 
@@ -53,16 +52,6 @@ namespace NeverLotto
 #if DEBUG
             tbcTab.SelectedTab = tabPage2;
 #endif
-        }
-
-        protected override void OnShown(EventArgs e)
-        {
-            base.OnShown(e);
-
-            if (DesignMode)
-                return;
-
-            Text = string.Format("{0} ({1})", Text, WinformUtility.GetPublishVersionText());
         }
 
         private void uscAnalysis_ChartShowing(object sender, AnalysisControl.ChartShowingEventArgs e)

@@ -8,7 +8,6 @@ using System.IO;
 using System.Windows.Forms;
 using NeverLotto.Engine;
 using OfficeOpenXml;
-
 #endregion
 
 namespace NeverLotto.Controls
@@ -77,40 +76,38 @@ namespace NeverLotto.Controls
             if (sfdFile.ShowDialog() != DialogResult.OK)
                 return;
 
-            var list = (List<Result>) bdsList.List;
+            var list = (List<Result>)bdsList.List;
 
             FileInfo newFile = new FileInfo(sfdFile.FileName);
-            using (ExcelPackage package = new ExcelPackage(newFile))
+            using ExcelPackage package = new ExcelPackage(newFile);
+            ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(DateTime.Now.ToString());
+
+            worksheet.SetValue(1, 1, "순번");
+            worksheet.SetValue(1, 2, "번호 1");
+            worksheet.SetValue(1, 3, "번호 2");
+            worksheet.SetValue(1, 4, "번호 3");
+            worksheet.SetValue(1, 5, "번호 4");
+            worksheet.SetValue(1, 6, "번호 5");
+            worksheet.SetValue(1, 7, "번호 6");
+            worksheet.SetValue(1, 8, "보너스");
+            worksheet.SetValue(1, 9, "일치");
+            worksheet.SetValue(1, 10, "등수");
+
+            for (int i = 0; i < list.Count; i++)
             {
-                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(DateTime.Now.ToString());
-
-                worksheet.SetValue(1, 1, "순번");
-                worksheet.SetValue(1, 2, "번호 1");
-                worksheet.SetValue(1, 3, "번호 2");
-                worksheet.SetValue(1, 4, "번호 3");
-                worksheet.SetValue(1, 5, "번호 4");
-                worksheet.SetValue(1, 6, "번호 5");
-                worksheet.SetValue(1, 7, "번호 6");
-                worksheet.SetValue(1, 8, "보너스");
-                worksheet.SetValue(1, 9, "일치");
-                worksheet.SetValue(1, 10, "등수");
-
-                for (int i = 0; i < list.Count; i++)
-                {
-                    worksheet.SetValue(i + 2, 1, list[i].No);
-                    worksheet.SetValue(i + 2, 2, list[i].Number1);
-                    worksheet.SetValue(i + 2, 3, list[i].Number2);
-                    worksheet.SetValue(i + 2, 4, list[i].Number3);
-                    worksheet.SetValue(i + 2, 5, list[i].Number4);
-                    worksheet.SetValue(i + 2, 6, list[i].Number5);
-                    worksheet.SetValue(i + 2, 7, list[i].Number6);
-                    worksheet.SetValue(i + 2, 8, list[i].BonusNumber);
-                    worksheet.SetValue(i + 2, 9, list[i].MatchedCount);
-                    worksheet.SetValue(i + 2, 10, list[i].Rank);
-                }
-
-                package.Save();
+                worksheet.SetValue(i + 2, 1, list[i].No);
+                worksheet.SetValue(i + 2, 2, list[i].Number1);
+                worksheet.SetValue(i + 2, 3, list[i].Number2);
+                worksheet.SetValue(i + 2, 4, list[i].Number3);
+                worksheet.SetValue(i + 2, 5, list[i].Number4);
+                worksheet.SetValue(i + 2, 6, list[i].Number5);
+                worksheet.SetValue(i + 2, 7, list[i].Number6);
+                worksheet.SetValue(i + 2, 8, list[i].BonusNumber);
+                worksheet.SetValue(i + 2, 9, list[i].MatchedCount);
+                worksheet.SetValue(i + 2, 10, list[i].Rank);
             }
+
+            package.Save();
 
             if (MessageBox.Show("엑셀 파일로 저장하였습니다. 저장한 파일을 열겠습니까?", "질문", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 Process.Start(sfdFile.FileName);
